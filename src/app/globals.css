@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login {
+  padding: 8px 15px;
+  text-align: center;
+  background-color: #2b72fc;
+  border: 1px solid #2b72fc;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login:hover {
+  background-color: transparent;
+
+  color: #2b72fc;
+}
+body {
+  background-color: whitesmoke;
+}
+.back-drop {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+/* toastify  */
+.Toastify__toast-container {
+  top: 70px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.shape-box {
+  border-bottom-left-radius: 100% 250px;
+  border-bottom-right-radius: 100% 250px;
+}
+@media (max-width: 991px) {
+  .shape-box {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+/* gradient banner */
+.bg-grad {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
