@@ -220,27 +220,27 @@ const Cart = () => {
               handleReset={handleReset}
             />
           )}
+          <div className=" bg-blue-300 border-[1px] rounded border-blue-950 flex-col p-8 mt-2">
+            <h2 className="text-2xl font-bold mb-2 max-md:text-lg">Note</h2>
+            <p className="mb-5">
+              Enter the card information as the image shown to test the payment
+              after you click on{" "}
+              <span className=" font-semibold">
+                &apos;Proceed To Check Out&apos;
+              </span>
+            </p>
+            <Image
+              src={screen}
+              className="text-center m-auto"
+              alt="screen"
+              width={400}
+              height={400}
+            />
+          </div>
         </div>
       ) : (
         <EmptyCart />
       )}
-      <div className=" bg-blue-300 border-[1px] rounded border-blue-950 flex-col p-8 mt-2">
-        <h2 className="text-2xl font-bold mb-2 max-md:text-lg">Note</h2>
-        <p className="mb-5">
-          Enter the card information as the image shown to test the payment
-          after you click on{" "}
-          <span className=" font-semibold">
-            &apos;Proceed To Check Out&apos;
-          </span>
-        </p>
-        <Image
-          src={screen}
-          className="text-center m-auto"
-          alt="screen"
-          width={400}
-          height={400}
-        />
-      </div>
     </>
   );
 };
