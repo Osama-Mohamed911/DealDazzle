@@ -29,9 +29,7 @@ const Product = ({ products }: Item) => {
             key={item._id}
             className="relative bg-white group border-[1px] border-zinc-200 hover:border-zinc-500 duration-300 hover:shadow-xl overflow-hidden"
           >
-            <Link
-              href={{ pathname: `/${item?._id}`, query: { _id: item?._id } }}
-            >
+            <Link href={{ pathname: "/product", query: { _id: item?._id } }}>
               <Image
                 src={item.image}
                 alt="product image"
@@ -72,7 +70,7 @@ const Product = ({ products }: Item) => {
                 </button>
                 <Link
                   href={{
-                    pathname: `/${item?._id}`,
+                    pathname: "/product",
                     query: { _id: item?._id },
                   }}
                 >

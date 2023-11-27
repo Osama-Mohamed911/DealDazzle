@@ -12,7 +12,7 @@ const page = async () => {
 
   return (
     <Container>
-      <p className="text-xl font-semibold pb-10 underline underline-offset-4 decoration-[1px]">
+      <p className="text-xl font-semibold pb-10 underline underline-offset-4 decoration-[1px] mt-14">
         Profile Information
       </p>
       <ProfileInfo />
