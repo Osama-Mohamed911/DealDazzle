@@ -227,7 +227,7 @@ const Cart = () => {
       <div className=" bg-blue-300 border-[1px] rounded border-blue-950 flex-col p-8 mt-2">
         <h2 className="text-2xl font-bold mb-2 max-md:text-lg">Note</h2>
         <p className="mb-5">
-          Enter the card information as that is in the image to test the payment
+          Enter the card information as the image shown to test the payment
           after you click on{" "}
           <span className=" font-semibold">
             &apos;Proceed To Check Out&apos;
