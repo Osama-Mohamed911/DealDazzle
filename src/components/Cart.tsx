@@ -69,7 +69,7 @@ const Cart = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: productData,
-          email: session?.user?.email,
+          // email: session?.user?.email,
         }),
       }
     );
