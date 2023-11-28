@@ -18,9 +18,13 @@ const MobileTable = () => {
   return (
     <>
       {productData.length > 0 ? (
-        <div className="lg:hidden grid grid-col-1 gap-4">
+        <div className="md:hidden grid grid-col-1 gap-4">
           {productData.map((item: ProductType) => (
             <div className="bg-white shadow rounded-lg p-4" key={item._id}>
+              <div className="bg-blue-950 text-center rounded p-1 mb-2">
+                <span className="  text-white ">{item.title}</span>
+              </div>
+
               <div className="flex items-center justify-between">
                 <X
                   onClick={() => {
@@ -28,48 +32,46 @@ const MobileTable = () => {
                   }}
                   className="w-4 h-4 hover:text-red-600 cursor-pointer duration-200"
                 />
-                <div className="flex flex-col gap-1 items-center">
-                  <Image
-                    src={item.image}
-                    alt="productImg"
-                    width={100}
-                    height={100}
-                  />
-                  <span>{item.title}</span>
-                </div>
-
-                <div className="flex items-center gap-1">
-                  <span
-                    onClick={() => dispatch(decreaseQuantity(item))}
-                    className=" p-1 rounded-md text-designColor cursor-pointer duration-200 inline-flex items-center justify-center"
-                  >
-                    <Minus className="w-4 h-4" />
-                  </span>
-                  <span className="font-semibold">{item?.quantity}</span>
-                  <span
-                    onClick={() => {
-                      dispatch(increaseQuantity(item));
-                    }}
-                    className=" p-1 rounded-md text-designColor cursor-pointer duration-200 inline-flex items-center justify-center"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </span>
-                </div>
-                <div className="">
-                  <div className="flex flex-col items-center gap-1">
-                    <span className=" text-white bg-blue-300 text-sm  p-1">
-                      UnitPrice
-                    </span>
-                    <span>
-                      <FormattedPrice amount={item?.price} />
-                    </span>
+                <Image
+                  src={item.image}
+                  alt="productImg"
+                  width={100}
+                  height={100}
+                />
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center flex-col gap-3 ">
+                    <div className="flex  items-center gap-1">
+                      <span className=" text-blue-600 font-semibold  uppercase  rounded-full text-sm  p-1">
+                        UnitPrice :
+                      </span>
+                      <span>
+                        <FormattedPrice amount={item?.price} />
+                      </span>
+                    </div>
+                    <div className="flex  items-center gap-1">
+                      <span className=" text-blue-600 font-semibold uppercase rounded-full text-sm  p-1">
+                        SubPrice :
+                      </span>
+                      <span>
+                        <FormattedPrice amount={item?.price * item?.quantity} />
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-center gap-1">
-                    <span className=" text-white bg-blue-300 text-sm  p-1">
-                      SubPrice
+                  <div className="flex  items-center gap-2">
+                    <span
+                      onClick={() => dispatch(decreaseQuantity(item))}
+                      className=" p-1 rounded-md bg-designColor text-designColor cursor-pointer duration-200 inline-flex items-center justify-center"
+                    >
+                      <Minus className="w-4 h-4 text-white" />
                     </span>
-                    <span>
-                      <FormattedPrice amount={item?.price * item?.quantity} />
+                    <span className="font-semibold">{item?.quantity}</span>
+                    <span
+                      onClick={() => {
+                        dispatch(increaseQuantity(item));
+                      }}
+                      className=" p-1 rounded-md bg-designColor text-designColor cursor-pointer duration-200 inline-flex items-center justify-center"
+                    >
+                      <Plus className="w-4 h-4 text-white" />
                     </span>
                   </div>
                 </div>
